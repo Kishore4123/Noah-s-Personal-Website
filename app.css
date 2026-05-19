@@ -1,0 +1,75 @@
+.cursor-effect::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  /* --- Carousel Base Styling --- */
+.custom-carousel {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Dark Gradient Overlay --- */
+/* This ensures white text is always readable, even on light images */
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.4) 100%);
+  pointer-events: none; /* Allows clicking through to the image if needed */
+}
+
+/* --- Caption Positioning --- */
+.custom-carousel .carousel-caption {
+  bottom: 20%; /* Lifts the text slightly higher than default */
+  z-index: 10;
+}
+
+/* --- Modern Custom Indicators --- */
+.custom-indicators button {
+  width: 30px !important;
+  height: 4px !important;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border: none !important;
+  transition: all 0.3s ease;
+}
+
+.custom-indicators button.active {
+  width: 45px !important; /* The active dot expands into a line */
+  background-color: #ffffff !important;
+}
+
+/* --- Arrow Controls Hover Effect --- */
+.custom-control {
+  width: 10%;
+  transition: background 0.3s ease;
+}
+
+.custom-control:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Animation Classes (Triggered by JS) --- */
+.caption-animate {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.caption-animate.show-text {
+  animation: slideUpFade 0.8s ease forwards;
+}
+
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
