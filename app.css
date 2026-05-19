@@ -73,3 +73,78 @@
     transform: translateY(0);
   }
 }
+
+/* --- Base Image Rule --- */
+/* Ensures images fill their container gracefully without stretching */
+.custom-carousel .carousel-item img {
+  object-fit: cover; 
+}
+
+/* =========================================
+   📱 MOBILE DEVICES (Phones, up to 767px)
+   ========================================= */
+@media (max-width: 767px) {
+  
+  /* Force a minimum height so the carousel doesn't become a tiny sliver */
+  .custom-carousel .carousel-item img {
+    height: 450px; 
+  }
+
+  /* Expand the text area to use more of the small screen */
+  .custom-carousel .carousel-caption {
+    bottom: 5%;
+    left: 8%;
+    right: 8%;
+  }
+
+  /* Shrink the massive heading text */
+  .custom-carousel .carousel-caption h1 {
+    font-size: 1.75rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Shrink the paragraph text and line height */
+  .custom-carousel .carousel-caption p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Make the indicator lines smaller to fit the screen */
+  .custom-indicators button {
+    width: 20px !important;
+  }
+  .custom-indicators button.active {
+    width: 30px !important; 
+  }
+}
+
+/* =========================================
+   💻 TABLETS (iPads, 768px to 991px)
+   ========================================= */
+@media (min-width: 768px) and (max-width: 991px) {
+  
+  .custom-carousel .carousel-item img {
+    height: 500px;
+  }
+
+  /* Medium-sized heading */
+  .custom-carousel .carousel-caption h1 {
+    font-size: 2.5rem !important;
+  }
+
+  .custom-carousel .carousel-caption p {
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================================
+   🖥️ DESKTOPS (Laptops and up, 992px+)
+   ========================================= */
+@media (min-width: 992px) {
+  
+  /* Cap the maximum height so it doesn't take over giant monitors */
+  .custom-carousel .carousel-item img {
+    height: 720px; 
+  }
+}
